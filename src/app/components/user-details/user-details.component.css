@@ -1,0 +1,25 @@
+.user-container {
+    border: 1px solid #000;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .user-card {
+    margin-bottom: 16px; 
+  }
+  
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  textarea[matInput] {
+    width: 100%;
+    min-height: 100px;
+  }
+  

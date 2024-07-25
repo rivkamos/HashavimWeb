@@ -1,0 +1,17 @@
+<div class="user-container">
+  <ul class="user-list">
+    <li *ngFor="let user of users" (click)="selectUser(user)">
+      <div class="user-card-wrapper">
+        <mat-card class="user-card">
+          <mat-card-content>
+            <div class="user-info">
+              <div>{{ user.name }}</div>
+              <div>{{ user.workerType | enumToString : WorkerType }}</div>
+              <div>{{ user.departmentType | enumToString : DepartmentType }}</div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </li>
+  </ul>
+</div>

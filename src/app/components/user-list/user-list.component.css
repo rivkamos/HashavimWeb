@@ -1,0 +1,26 @@
+.user-container {
+  padding: 16px; 
+}
+
+.user-list {
+  list-style-type: none; 
+  padding: 0;
+}
+
+.user-card-wrapper {
+  margin-bottom: 16px; 
+}
+
+.user-card {
+  width: 100%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.user-info > div {
+  margin-bottom: 8px;
+}

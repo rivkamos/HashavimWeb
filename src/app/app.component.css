@@ -1,0 +1,7 @@
+.container{
+  display: flex; 
+}
+
+.inner-component{
+  margin-right:20%
+}

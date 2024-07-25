@@ -1,0 +1,33 @@
+<div class="user-container" *ngIf="user">
+  <mat-card class="user-card">
+    <mat-card-content>
+      <h2>{{ user.name }}</h2>
+      <div>{{ user.workerType | enumToString : WorkerType }}</div>
+      <div>{{ user.departmentType | enumToString : DepartmentType }}</div>
+      <div>{{ user.phoneNumber }}</div>
+      <div>{{ user.address }}</div>
+      <div>{{ user.gender | enumToString : Gender }}</div>
+    </mat-card-content>
+  </mat-card>
+
+  <form [formGroup]="messageForm" (ngSubmit)="sendMessage()">
+    <mat-form-field>
+      <mat-label>Select recipient</mat-label>
+      <mat-select formControlName="selectedRecipient">
+        <mat-option *ngFor="let recipient of users" [value]="recipient.id" [disabled]="recipient.id === user.id">
+          {{ recipient.name }} {{ recipient.lastName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput formControlName="message" placeholder="Enter your message here..."></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="messageForm.invalid">Send</button>
+  </form>
+</div>
+
+<div class="user-container" *ngIf="!user">
+  <p>Please select a user</p>
+</div>

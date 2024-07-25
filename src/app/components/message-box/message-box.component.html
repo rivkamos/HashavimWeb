@@ -1,0 +1,13 @@
+<div class="mui-card">
+  <h2 class="mui-card-header">My Messages</h2>
+  <div *ngIf="(messages$ | async); else noMessages" class="mui-card-content">
+    <ul>
+      <li *ngFor="let message of (messages$ | async)" class="mui-message-item">
+        {{ message }}
+      </li>
+    </ul>
+  </div>
+  <ng-template #noMessages>
+    <p class="mui-no-messages">No messages available.</p>
+  </ng-template>
+</div>
